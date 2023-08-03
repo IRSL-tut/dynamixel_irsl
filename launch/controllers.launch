@@ -6,8 +6,9 @@
   <arg name="use_moveit"              default="false"/>
   <arg name="use_joint_state"         default="true"/>
   <arg name="use_cmd_vel"             default="false"/>
-
-  <param name="dynamixel_info"          value="$(find dynamixel_irsl_test)/config/config.yaml"/>
+  
+  <arg name="dynamixel_settings"      default="$(find dynamixel_irsl_test)/config/config.yaml" /> 
+  <param name="dynamixel_info"        value="$(arg dynamixel_settings)"/>
 
   <node name="$(arg namespace)" pkg="dynamixel_workbench_controllers" type="dynamixel_workbench_controllers"
         required="true" output="screen" args="$(arg usb_port) $(arg dxl_baud_rate)">
@@ -21,4 +22,3 @@
     </rosparam>
   </node>
 </launch>
-
