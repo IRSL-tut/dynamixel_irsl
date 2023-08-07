@@ -8,6 +8,8 @@
   <arg name="use_cmd_vel"             default="false"/>
   
   <arg name="dynamixel_settings"      default="$(find dynamixel_irsl_test)/config/config.yaml" /> 
+  <arg name="controller_settings"     default="$(find dynamixel_irsl_test)/config/controller_config.yaml" /> 
+
   <param name="dynamixel_info"        value="$(arg dynamixel_settings)"/>
 
   <node name="$(arg namespace)" pkg="dynamixel_workbench_controllers" type="dynamixel_workbench_controllers"
@@ -15,10 +17,11 @@
     <param name="use_moveit"              value="$(arg use_moveit)"/>
     <param name="use_joint_states_topic"  value="$(arg use_joint_state)"/>
     <param name="use_cmd_vel_topic"       value="$(arg use_cmd_vel)"/>
-    <rosparam>
+    <!-- <rosparam>
       publish_period: 0.010
       dxl_read_period: 0.010
       dxl_write_period: 0.010
-    </rosparam>
+    </rosparam> -->
+    <rosparam command="load" file="$(arg controller_settings)"/>
   </node>
 </launch>
