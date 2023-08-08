@@ -6,6 +6,7 @@
   <arg name="use_moveit"              default="false"/>
   <arg name="use_joint_state"         default="true"/>
   <arg name="use_cmd_vel"             default="false"/>
+  <arg name="joint_trajectory_name"   default="~trajectory_controller/command" />
   
   <arg name="dynamixel_settings"      default="$(find dynamixel_irsl_test)/config/config.yaml" /> 
   <arg name="controller_settings"     default="$(find dynamixel_irsl_test)/config/controller_config.yaml" /> 
@@ -17,6 +18,7 @@
     <param name="use_moveit"              value="$(arg use_moveit)"/>
     <param name="use_joint_states_topic"  value="$(arg use_joint_state)"/>
     <param name="use_cmd_vel_topic"       value="$(arg use_cmd_vel)"/>
+    <remap from="~joint_trajectory" to="$(arg joint_trajectory_name)" />
     <!-- <rosparam>
       publish_period: 0.010
       dxl_read_period: 0.010
