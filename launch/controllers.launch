@@ -8,8 +8,8 @@
   <arg name="use_cmd_vel"             default="false"/>
   <arg name="joint_trajectory_name"   default="~trajectory_controller/command" />
   
-  <arg name="dynamixel_settings"      default="$(find dynamixel_irsl_test)/config/config.yaml" /> 
-  <arg name="controller_settings"     default="$(find dynamixel_irsl_test)/config/controller_config.yaml" /> 
+  <arg name="dynamixel_settings"      default="$(find dynamixel_irsl)/config/config.yaml" /> 
+  <arg name="controller_settings"     default="$(find dynamixel_irsl)/config/controller_config.yaml" /> 
 
   <param name="dynamixel_info"        value="$(arg dynamixel_settings)"/>
 
