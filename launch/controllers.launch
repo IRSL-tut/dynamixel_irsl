@@ -6,7 +6,7 @@
   <arg name="use_moveit"              default="false"/>
   <arg name="use_joint_state"         default="true"/>
   <arg name="use_cmd_vel"             default="false"/>
-  <arg name="joint_trajectory_name"   default="~trajectory_controller/command" />
+  <arg name="joint_trajectory_name"   default="~joint_controller/command" />
   
   <arg name="dynamixel_settings"      default="$(find dynamixel_irsl)/config/config.yaml" /> 
   <arg name="controller_settings"     default="$(find dynamixel_irsl)/config/controller_config.yaml" /> 
